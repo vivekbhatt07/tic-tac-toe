@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background-color: #000;
+}
+
+.sub-box {
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.sub-box.player-one::before,
+.sub-box.player-one::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 80%;
+  background: #000;
+}
+
+.sub-box.player-one::before {
+  transform: rotate(45deg);
+}
+
+.sub-box.player-one::after {
+  transform: rotate(-45deg);
+}
+
+.sub-box.player-two::before,
+.sub-box.player-two::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sub-box.player-two::before {
+  background: #000;
+  height: 80%;
+  width: 80%;
+}
+
+.sub-box.player-two::after {
+  background: #fff;
+  height: 60%;
+  width: 60%;
+}
+
+.main-box .player-one {
+  cursor: not-allowed;
+}
+
+.main-box .player-two {
+  cursor: not-allowed;
+}
+
+.main-box.player-one :not(.player-one):not(.player-two):hover::before,
+.main-box.player-one :not(.player-one):not(.player-two):hover::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 80%;
+  background: #ccc;
+}
+
+.main-box.player-one :not(.player-one):not(.player-two):hover::before {
+  transform: rotate(45deg);
+}
+
+.main-box.player-one :not(.player-one):not(.player-two):hover::after {
+  transform: rotate(-45deg);
+}
+
+.main-box.player-two :not(.player-one):not(.player-two):hover::before,
+.main-box.player-two :not(.player-one):not(.player-two):hover::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 80%;
+  background: #ccc;
+}
