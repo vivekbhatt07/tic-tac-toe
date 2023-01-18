@@ -110,3 +110,50 @@ body {
   height: 60%;
   width: 60%;
 }
+
+.outcome {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.outcome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.outcome-text {
+  font-size: 32px;
+  color: #fff;
+}
+
+.outcome-button {
+  border: none;
+  padding: 0.5em 1em;
+  font-family: inherit;
+  text-transform: capitalize;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.outcome-button:hover {
+  transform: scale(1.1);
+}
+
+.outcome-button:active {
+  transform: scale(1);
+}
