@@ -96,7 +96,17 @@ body {
 .main-box.player-two :not(.player-one):not(.player-two):hover::after {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 80%;
+  border-radius: 50%;
+}
+
+.main-box.player-two :not(.player-one):not(.player-two):hover::before {
   background: #ccc;
+  height: 80%;
+  width: 80%;
+}
+
+.main-box.player-two :not(.player-one):not(.player-two):hover::after {
+  background: #fff;
+  height: 60%;
+  width: 60%;
 }
